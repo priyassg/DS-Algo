@@ -29,7 +29,7 @@ EventManager.prototype.on = function on(eventName, cb, context){
 
 EventManager.prototype.trigger = function trigger(eventName, ...args){
   if(this.eventmap[eventName]){
-    this.eventmap[eventName].forEach(entry => entry.cb.call(entry.context,...args));
+    this.eventmap[eventName].forEach(entry => entry.cb.call(entry.context,args));
   }
 }
 
